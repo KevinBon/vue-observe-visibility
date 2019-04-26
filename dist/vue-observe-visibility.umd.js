@@ -304,7 +304,9 @@ var VisibilityState = function () {
 
 			// Wait for the element to be in document
 			vnode.context.$nextTick(function () {
-				_this.observer.observe(_this.el);
+				if (_this.observer) {
+					_this.observer.observe(_this.el);
+				}
 			});
 		}
 	}, {
